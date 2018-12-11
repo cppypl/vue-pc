@@ -1,0 +1,6 @@
+*{margin: 0; padding: 0}
+a{text-decoration: none}
+.center{text-align: center}
+.nav { background: #666; color: #fff; padding: 20px}
+.nav a{color: #fff}
+.router-link-active{color: #f60 !important}
