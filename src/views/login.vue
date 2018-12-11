@@ -1,10 +1,11 @@
 <template>
+
     <div class="center">
         
 
         <div>
             <router-link to="/" exact>回首页</router-link>
-            登录
+            {{aaa}}
         </div>
 
 
@@ -15,9 +16,30 @@
     </div>
 </template>
 
-<script>
+<script> 
+
 export default {
-    
+    data(){
+        return {
+            aaa:''
+        }
+    },
+
+    created(){
+
+
+        this.$http.get('https://www.easy-mock.com/mock/5bf75e875cfdd6564a60da5d/example/getcity#!method=get1')
+        .then(res=>{
+            this.aaa=res.data.message
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+
+        
+
+
+    },
     
     methods:{
         login(){
@@ -29,7 +51,7 @@ export default {
             
             // this.$store.commit('login',this.userinfo)
 
-            console.log(this.$route.query);
+            // console.log(this.$route.query);
             let redirect=this.$route.query.redirect || 'project'
             this.$router.push({
                 path:'/management/'+redirect
