@@ -10,7 +10,7 @@ let local={
 
 
 export default{
-    install(vm){
-        vm.prototype.$local=local
+    install(Vue){
+        Vue.prototype.$local=local
     }
 }

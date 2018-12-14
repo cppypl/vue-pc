@@ -22,6 +22,16 @@ import Local from './lib/localstorage.js'
 Vue.use(Local)
 //end
 
+//mint-ui
+
+import Mint from 'mint-ui';
+import 'mint-ui/lib/style.css'
+Vue.use(Mint);
+
+// Vue.prototype.$Toast=Toast
+// Vue.prototype.$Indicator=Indicator
+
+//end
 
 new Vue({
   el: '#app',
@@ -29,7 +39,7 @@ new Vue({
   store,
   components: { 
     App,
-    Login
+    Login,
    },
   template: '<App/>'
 })
